@@ -6,8 +6,11 @@ import * as actions from 'actions';
 export var Login = React.createClass({
   onLogin() {
     var {dispatch} = this.props;
-
     dispatch(actions.startLogin());
+  },
+  onLoginGoogle() {
+    var {dispatch} = this.props;
+    dispatch(actions.startLoginGoogle());
   },
   render() {
     return (
@@ -19,9 +22,11 @@ export var Login = React.createClass({
             <div className="callout callout-auth">
               <h3>Login</h3>
               <p>
-                Login with GitHub account below.
+                Login with GitHub or Google account below.
               </p>
-              <button className="button" onClick={this.onLogin}>Login With GitHub</button>
+              <button className="button primary" onClick={this.onLogin}>GitHub</button>
+              <br/>
+              <button className="button secondary" onClick={this.onLoginGoogle}>Google</button>
             </div>
           </div>
         </div>
